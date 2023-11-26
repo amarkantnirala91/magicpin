@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For hiding the vertical scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  /* For hiding the horizontal scrollbar */
+ ::-webkit-scrollbar {
+    height: 0;
+  }
+  
+  /* For hiding both vertical and horizontal scrollbars */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  /* Make the scrollbar transparent (if it's still visible) */
+ ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  #custom-input-id::placeholder {
+    color: gray !important;
+  }
+  .custom-select .ant-select-selection-placeholder {
+    color: gray !important; /* Use !important if necessary */
+  }
+  
