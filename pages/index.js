@@ -1,8 +1,2 @@
-const welcome = ()=>{
-    return (
-        <>
-        <p> welcome to magicpin</p>
-        </>
-    )
-}
-export default welcome
+import Home from "@/components/home";
+export default Home;

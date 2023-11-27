@@ -23,10 +23,28 @@
     background-color: transparent;
   }
   
+  /* Default styles for larger screens */
+
+
+
   #custom-input-id::placeholder {
     color: gray !important;
   }
   .custom-select .ant-select-selection-placeholder {
     color: gray !important; /* Use !important if necessary */
+  }
+  /* slider brand */
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-120%);
+    }
+  }
+
+  .logo-slides{
+    animation: 8s slide infinite linear;
+
   }
   

@@ -1,24 +1,23 @@
 import Head from 'next/head';
 import Image from "next/image";
 import Link from "next/link";
-import { useState , useRef } from "react";
+import {useState } from "react";
 import { Form , Input ,Select ,Popover ,Button ,Modal} from 'antd';
 import { MenuOutlined } from "@ant-design/icons";
 import Footer from "../footer";
+import LoginSingup from '../login-signup';
 
   const Layout = ({children , title="Page title is empty"})=>{
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [inputLength, setInputLength] = useState(0);
-  const loginRef = useRef();
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const showModal = () => {
+        setIsModalOpen(true);
+      };
+      const handleOk = () => {
+        setIsModalOpen(false);
+      };
+      const handleCancel = () => {
+        setIsModalOpen(false);
+      };
   const city = [
         {
           value: 'patna',
@@ -51,6 +50,7 @@ import Footer from "../footer";
   const onSearch = (value) => {
       console.log( value);
     };
+    
   const filterOption = (input, option) =>
   (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
   const popoverContent = (
@@ -69,48 +69,6 @@ import Footer from "../footer";
           </Link>
         </div>
       );
-  const login = ()=>{
-        showModal()
-        }
-  const LoginModal = ()=>{                                                        
-      return (
-        <Modal footer={null} open={isModalOpen} width={430} onOk={handleOk} onCancel={handleCancel}>
-         <div className="flex flex-col items-center gap-y-5 px-3 py-3">
-           <Image src="/images/phone_login.svg" alt="phone icon" width={80} height={10} />
-           <div className="text-center">
-            <h1 className="text-lg font-bold">Please enter your mobile number</h1>
-            <p>
-            Your transactions will be linked to this number. Don’t worry, we’ll never share it.
-            </p>
-           </div>
-           <input type="text" maxLength={10} placeholder="99999999999" className="text-center placeholder:text-gray-300 placeholder:text-2xl text-2xl font-bold py-2 outline-none" onChange={(e)=>onInputChange(e.target.value)} />
-            <button className = {`bg-gray-100 text-gray-300 text-lg px-6 py-1 rounded-md`} ref={loginRef} disabled>Send OTP</button>
-            <p className="text-sm font-semibold">OR</p>
-            <button className="text-white bg-[#EF1C74] py-[6px] px-6 rounded-md">Login with Corporate </button>
-            <div className="text-center">
-              <p className="text-xs text-gray-600">By clicking ‘Send OTP’, you accept our</p>
-              <Link href="#">
-                <button className="text-xs text-[#EF1C74] font-bold">Privacy policy</button>
-              </Link>
-            </div>
-         </div>
-        </Modal>
-      )
-    }
-    const onInputChange = (value)=>{
-      const login = loginRef.current
-      if(value.length == 10)
-      return (
-        login.disabled = false,
-        login.classList.remove('text-gray-300'),
-        login.classList.add('bg-[#EF1C74]'),
-        login.classList.add('text-white')
-      )
-    login.disabled = true
-    login.classList.add('text-gray-300'),
-    login.classList.remove('bg-[#EF1C74]','text-[ffffff]')
-    }
-
   return (
     <>
       <Head>
@@ -147,13 +105,13 @@ import Footer from "../footer";
         placeholder="Search for places, cuisines, and more"
         style={{ border: '1px solid #d9d9d9', outline: 'none'  }}
         id="custom-input-id"
-      
        />
+       
       </div>
       <div className="flex items-center gap-3 md:gap-6" >
-        <button className="md:py-[4px] py-1 text-[#EF1C74] text-xs md:text-lg md:px-5 px-4 font-bold rounded-md border border-[#EF1C74]" onClick={login}>Login</button>
+        <button className="md:py-[4px] py-1 text-[#EF1C74] text-xs md:text-lg md:px-5 px-4 font-bold rounded-md border border-[#EF1C74]" onClick={showModal}>Login</button>
         {/* login modal */}
-        <LoginModal />
+         <LoginSingup  isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} />
         <button className="md:hidden mt-1">
           <i className='bx bx-search text-xl text-gray-400'></i>
         </button>
