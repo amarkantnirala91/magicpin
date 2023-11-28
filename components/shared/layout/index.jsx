@@ -54,7 +54,7 @@ import Meta from '../meta';
   const filterOption = (input, option) =>
   (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
   const popoverContent = (
-        <div className="flex flex-col gap-y-1 px-2 shadow-md ">
+        <div className="flex flex-col gap-y-1 px-2  ">
           <Link href="/">
           <button className="capitalize text-[16px] text-gray-700 font-medium">home</button>
           </Link>
@@ -117,7 +117,7 @@ import Meta from '../meta';
           <i className='bx bx-search text-xl text-gray-400'></i>
         </button>
         <Popover  content={popoverContent} trigger="click" arrow={false}>
-        <MenuOutlined className="text-gray-400 text-xl cursor-pointer" />
+        <Image src="/images/hamburger.svg" alt='hamburger' width={30} height={10} className="cursor-pointer" />
      </Popover>
       </div>
      </div>
