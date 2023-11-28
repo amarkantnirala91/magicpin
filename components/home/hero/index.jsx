@@ -1,9 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Dropdown,Select,Input } from "antd";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import LoginSingup from "@/components/shared/login-signup";
-import city from '../../../json-api/city.json'
 const Hero = ()=>{
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -50,12 +49,38 @@ const Hero = ()=>{
       ];
    const filterOption = (input, option) =>
   (option?.label ?? '').toLowerCase().includes(input.toLowerCase());  
-  
+  const city = [
+    {
+      value: 'patna',
+      label: 'Patna',
+    },
+    {
+      value: 'delhi',
+      label: 'Delhi',
+    },
+    {
+      value: 'mumbai',
+      label: 'Mumbai',
+    },
+    {
+      value: 'nasriganj',
+      label: 'Nasriganj',
+    },
+    {
+      value: 'jina',
+      label: 'Jina',
+    },
+    {
+      value: 'sasaram',
+      label: 'Sasaram',
+    },
+  ]
+
   return (
     <div>
       <section
       style={{ backgroundImage: `url('/building.svg')` , backgroundSize:'contain', backgroundRepeat:'no-repeat',backgroundPosition:'bottom'}}
-       className="bg-[#2E108E] bg-opacity-[99%] pt-6 h-[500px] relative"
+       className="bg-[#2E108E] bg-opacity-[99%] pt-6 h-[500px] w-[100%] relative"
        >
        <div className="container max-md:px-5 md:w-[83%] mx-auto">
        <div className=" flex items-center justify-between">
@@ -67,21 +92,21 @@ const Hero = ()=>{
          </Link>
          <div className="flex items-center gap-x-10">
             <Link href="#">
-             <button className="uppercase text-white font-semibold text-[15px]">about us</button>
+             <button className="uppercase max-md:hidden text-white font-semibold text-[15px]">about us</button>
             </Link>
             <Link href="#">
-             <button className="uppercase text-white font-semibold text-[15px]">news room</button>
+             <button className="uppercase  max-md:hidden text-white font-semibold text-[15px]">news room</button>
             </Link>
             <Link href="#">
-             <button className="uppercase text-white font-semibold text-[15px]">blog</button>
+             <button className="uppercase  max-md:hidden text-white font-semibold text-[15px]">blog</button>
             </Link>
             <Dropdown menu={{items,}} placement="bottomLeft" arrow >
-            <button className="uppercase text-white font-semibold text-[15px]">business
+            <button className="uppercase text-white font-semibold text-[15px]  max-md:hidden">business
             <i className='bx bxs-chevron-down'></i>
             </button>
             </Dropdown>
             {/* download app store  */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1  max-md:hidden">
              <span className="text-white text-sm"> Get app:</span>
              <Link href="#">
               <Image 
@@ -102,7 +127,7 @@ const Hero = ()=>{
          </div>
         </div>
         <div className=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center gap-y-9">
-          <p className="text-white font-bold text-4xl tracking-tight">Super Savings at million<span className="text-[#EF1C71] font-extrabold">+ </span>stores around you!</p>
+          <p className="text-white font-bold text-4xl  max-md:hidden tracking-tight">Super Savings at million<span className="text-[#EF1C71] font-extrabold">+ </span>stores around you!</p>
           <div className="relative flex w-[95%]">
           <Image src='/images/favicon.ico' alt="magicpin icon" width={18} height={18} className="absolute top-[14px] left-5 z-30" />
       <Select

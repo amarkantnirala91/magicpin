@@ -3,7 +3,7 @@ import Link from "next/link"
 import food from "@/json-api/food-brand.json"
 const FoodBrand = () => {
   return (
-    <section className="container py-5 mx-auto md:w-[83%] max-md:px-5">
+    <section className="container pt-5 mx-auto md:w-[83%] max-md:px-5">
        <h1 className="text-[27px] font-bold text-gray-700 mb-5">Top Food Brands</h1>
        <div className="grid grid-cols-3 md:grid-cols-5 max-md:gap-6 md:gap-y-7 lg:grid-cols-8">
        {

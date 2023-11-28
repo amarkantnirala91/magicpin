@@ -2,12 +2,12 @@ import Head from 'next/head';
 import Image from "next/image";
 import Link from "next/link";
 import {useState } from "react";
-import { Form , Input ,Select ,Popover ,Button ,Modal} from 'antd';
+import { Input ,Select ,Popover } from 'antd';
 import { MenuOutlined } from "@ant-design/icons";
 import Footer from "../footer";
 import LoginSingup from '../login-signup';
-
-  const Layout = ({children , title="Page title is empty"})=>{
+import Meta from '../meta';
+  const Layout = ({children , title ="page title Empty" ,description="" ,keywords=""})=>{
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
         setIsModalOpen(true);
@@ -71,10 +71,11 @@ import LoginSingup from '../login-signup';
       );
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <link rel="icon" href="/images/favicon.ico" />
-      </Head>
+     <Meta 
+   title={title}
+   description={description}
+   keywords={keywords}
+   />
     <section className=" py-1 md:py-4 shadow-lg  bg-white z-50 sticky top-0">
      <div className="container mx-auto max-md:px-3 md:w-[85%] flex justify-between items-center ">
       <div className="flex max-md:flex-col md:gap-10 w-full">
