@@ -7,7 +7,8 @@ import { MenuOutlined } from "@ant-design/icons";
 import Footer from "../footer";
 import LoginSingup from '../login-signup';
 import Meta from '../meta';
-  const Layout = ({children , title ="page title Empty" ,description="" ,keywords=""})=>{
+  const Layout = ({children , title ="page title Empty" ,description="" ,keywords="" ,image})=>{
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
         setIsModalOpen(true);
@@ -54,7 +55,7 @@ import Meta from '../meta';
   const filterOption = (input, option) =>
   (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
   const popoverContent = (
-        <div className="flex flex-col gap-y-1 px-2 shadow-md ">
+        <div className="flex flex-col gap-y-1 px-2  ">
           <Link href="/">
           <button className="capitalize text-[16px] text-gray-700 font-medium">home</button>
           </Link>
@@ -80,7 +81,7 @@ import Meta from '../meta';
      <div className="container mx-auto max-md:px-3 md:w-[85%] flex justify-between items-center ">
       <div className="flex max-md:flex-col md:gap-10 w-full">
         <Link href="/">
-         <Image src="/logo-v1.svg" alt="magicpin" width={130} height={10}
+         <Image src={image ? "/about-magicpin.png" : "/logo-v1.svg"} alt="magicpin" width={image ? 90 : 130} height={10}
           className="cursor-pointer transition-transform  transform hover:scale-110 max-md:w-16"
          />
         </Link>
@@ -117,7 +118,7 @@ import Meta from '../meta';
           <i className='bx bx-search text-xl text-gray-400'></i>
         </button>
         <Popover  content={popoverContent} trigger="click" arrow={false}>
-        <MenuOutlined className="text-gray-400 text-xl cursor-pointer" />
+        <Image src="/images/hamburger.svg" alt='hamburger' width={30} height={10} className="cursor-pointer" />
      </Popover>
       </div>
      </div>

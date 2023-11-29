@@ -14,7 +14,7 @@ const ScrollTop = () => {
    }
     },[])
   return (
-      <button onClick={goToTop} className={`fixed bottom-9 right-9 text-3xl h-10 w-10 ${!backToTopBtn ?"hidden" : "block"} bg-gray-400 rounded-full`}>
+      <button onClick={goToTop} className={`fixed bottom-9 right-9 text-3xl hover:bg-slate-500 h-10 w-10 ${!backToTopBtn ?"hidden" : "block"} bg-gray-400 rounded-full`}>
         <i className='bx bx-chevron-up  text-white'></i>
       </button>
 
