@@ -91,7 +91,7 @@ const Hero = ()=>{
         />
          </Link>
          <div className="flex items-center gap-x-10">
-            <Link href="#">
+            <Link href="/about-us">
              <button className="uppercase max-md:hidden text-white font-semibold text-[15px]">about us</button>
             </Link>
             <Link href="#">

@@ -6,7 +6,6 @@ import FoodBrand from "./food-brand"
 import Voucher from "./voucher"
 import Meta from "../shared/meta"
 import ScrollTop from "../shared/scroll-top"
-import Layout from "../shared/layout"
 const Home = ()=>{
   return (
   <>
@@ -21,7 +20,6 @@ const Home = ()=>{
     <FoodBrand />
     <Voucher />
     <Footer/>
-    <Layout />
     <ScrollTop />
   </>
   )
