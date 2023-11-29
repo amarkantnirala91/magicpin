@@ -7,7 +7,8 @@ import { MenuOutlined } from "@ant-design/icons";
 import Footer from "../footer";
 import LoginSingup from '../login-signup';
 import Meta from '../meta';
-  const Layout = ({children , title ="page title Empty" ,description="" ,keywords=""})=>{
+  const Layout = ({children , title ="page title Empty" ,description="" ,keywords="" ,image})=>{
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
         setIsModalOpen(true);
@@ -80,7 +81,7 @@ import Meta from '../meta';
      <div className="container mx-auto max-md:px-3 md:w-[85%] flex justify-between items-center ">
       <div className="flex max-md:flex-col md:gap-10 w-full">
         <Link href="/">
-         <Image src="/logo-v1.svg" alt="magicpin" width={130} height={10}
+         <Image src={image ? "/about-magicpin.png" : "/logo-v1.svg"} alt="magicpin" width={image ? 90 : 130} height={10}
           className="cursor-pointer transition-transform  transform hover:scale-110 max-md:w-16"
          />
         </Link>
