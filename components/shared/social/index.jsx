@@ -26,11 +26,11 @@ const Social = ({data=""}) => {
        className='bg-green-500 rounded-full  hover:translate-x-[-5px] border-none'
        style={{width:"40px" , height:"40px"}}
       /> 
-   
-    </div>
-      <Button className='bg-gray-400 h-[50px] border-none fixed bottom-28 z-40 rounded-full w-[50px] right-8 ' type='default' >
-       <Image src="/images/social-share.svg" layout='fill' objectFit='cover' alt='social' className=' hover:rotate-180 duration-200 p-3' /> 
+       <Button className='bg-gray-400 h-[50px] border-none fixed bottom-28 z-40 rounded-full w-[50px] right-8 ' type='default' >
+       <Image src="/images/social-share.svg" layout='fill' objectFit='cover' alt='social' className=' hover:rotate-180 group-hover:rotate-180 duration-200 p-3' /> 
       </Button>
+    </div>
+      
     </section>
   )
 }

@@ -78,7 +78,7 @@ import Meta from '../meta';
    keywords={keywords}
    />
     <section className=" py-1 md:py-4 shadow-lg  bg-white z-50 sticky top-0">
-     <div className="container mx-auto max-md:px-3 md:w-[85%] flex justify-between items-center ">
+     <div className="container mx-auto max-md:px-5 max-md:pr-10  md:w-[85%] flex justify-between items-center ">
       <div className="flex max-md:flex-col md:gap-10 w-full">
         <Link href="/">
          <Image src={image ? "/about-magicpin.png" : "/logo-v1.svg"} alt="magicpin" width={image ? 90 : 130} height={10}
@@ -110,14 +110,14 @@ import Meta from '../meta';
        />
        
       </div>
-      <div className="flex items-center gap-3 md:gap-6" >
+      <div className="flex items-center gap-2 md:gap-6" >
         <button className="md:py-[4px] py-1 text-[#EF1C74] text-xs md:text-lg md:px-5 px-4 font-bold rounded-md border border-[#EF1C74]" onClick={showModal}>Login</button>
         {/* login modal */}
          <LoginSingup  isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} />
         <button className="md:hidden mt-1">
           <i className='bx bx-search text-xl text-gray-400'></i>
         </button>
-        <Popover  content={popoverContent} trigger="click" arrow={false}>
+        <Popover   content={popoverContent} trigger="click" arrow={false}>
         <Image src="/images/hamburger.svg" alt='hamburger' width={30} height={10} className="cursor-pointer" />
      </Popover>
       </div>
