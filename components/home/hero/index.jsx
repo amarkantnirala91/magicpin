@@ -94,7 +94,7 @@ const Hero = ()=>{
             <Link href="/about-us">
              <button className="uppercase max-md:hidden text-white font-semibold text-[15px]">about us</button>
             </Link>
-            <Link href="#">
+            <Link href="/news">
              <button className="uppercase  max-md:hidden text-white font-semibold text-[15px]">news room</button>
             </Link>
             <Link href="#">
